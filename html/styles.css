@@ -1,0 +1,738 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ensure padding/margin is included in the element's size */
+}
+
+/* General Styling */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+  color: #333;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+header {
+  position: relative;
+  background-color: #2a7ae2;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  width: 100%; /* Ensure header width matches viewport */
+  overflow: hidden; /* Prevent overflow from child elements */
+}
+
+header .logo {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+header .logo img {
+  max-height: 120px;
+  max-width: 100%; /* Prevent image overflow */
+}
+
+header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2 rem;
+  margin: 0;
+  color: #ffcb05;
+  text-shadow: 2px 2px #1a4a91;
+  word-wrap: break-word; /* Prevent text overflow */
+}
+
+nav ul {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav ul li {
+  margin: 0;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px 15px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  background-color: #ffcb05;
+  color: #2a7ae2;
+  transform: scale(1.1);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  header .logo img {
+    max-height: 60px; /* Smaller logo for mobile */
+  }
+
+  nav ul {
+    flex-direction: row; /* Keep links in one row */
+    gap: 10px;
+  }
+
+  nav ul li a {
+    font-size: 0.9rem;
+  }
+}
+
+
+/* Hero Section with Rolling Gallery */
+#hero {
+  position: relative;
+  width: 100%;
+  height: 55vh; /* Full viewport height */
+  background-image: url('images/hufc-scrimmage.jpg'); /* Replace with your image path */
+  background-size: cover; /* Ensures the image fills the container */
+  background-position: center; /* Centers the image */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers content vertically */
+  align-items: center; /* Centers content horizontally */
+  text-align: center;
+  color: white; /* Makes text readable */
+}
+
+.hero-content {
+  position: relative; /* Keeps the content above the background */
+  z-index: 2; /* Ensures the text is on top */
+  padding: 20px 30px;
+}
+
+.hero-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: #ffcb05; /* Change to yellow for better visibility */
+  margin-bottom: 10px;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8); /* Add a strong shadow to make text readable */
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  color: white; /* Keep white for contrast with the image */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Add subtle shadow for better readability */
+  margin-bottom: 20px;
+}
+
+/* General CTA Button Styles */
+.cta-button {
+  text-decoration: none;
+  color: white;
+  padding: 0.75em 1.5em;
+  margin: 0.5em;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+  transform: scale(1.1); /* Subtle zoom effect */
+}
+
+/* Player Sign-Up Button - Blue */
+.player-signup {
+  background-color: #007bff; /* Blue */
+}
+
+.player-signup:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Volunteer Sign-Up Button - Yellow */
+.volunteer-signup {
+  background-color: #ffc107; /* Yellow */
+  color: white; /* Black text for better contrast */
+}
+
+.volunteer-signup:hover {
+  background-color: #e0a800; /* Darker yellow on hover */
+}
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  #hero {
+    height: auto; /* Adjust height for smaller screens */
+    padding: 20px;
+  }
+
+  .hero-content h2 {
+    font-size: 2rem; /* Scale down heading size */
+  }
+
+  .hero-content p {
+    font-size: 1rem; /* Scale down paragraph size */
+  }
+
+  .cta-button {
+    padding: 8px 12px; /* Adjust button padding for smaller screens */
+    font-size: 0.85rem; /* Reduce font size */
+    border-radius: 4px; /* Adjust border-radius for smaller buttons */
+  }
+
+  .volunteer-signup {
+    background-color: #ffc107; /* Maintain yellow background */
+    font-size: 0.85rem; /* Adjust font size for smaller screens */
+    padding: 8px 12px; /* Reduce padding */
+  }
+
+  .volunteer-signup:hover {
+    background-color: #e0a800; /* Maintain hover effect */
+  }
+}
+
+/* Ensure the media query targets mobile correctly */
+@media (max-width: 768px) {
+  .volunteer-signup {
+    font-size: 0.8rem !important; /* Force the font size to change */
+    padding: 8px 16px !important; /* Ensure proper button size */
+    display: inline-block; /* Maintain consistent button shape */
+    width: auto; /* Avoid distortion by ensuring auto width */
+  }
+}
+
+/* Ensure proper spacing between buttons on mobile */
+@media (max-width: 768px) {
+  .cta-button {
+    margin: 16px 0 !important; /* Add vertical spacing between buttons */
+  }
+}
+
+/* Container for the "What are we?" and "Why?" sections */
+.info-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centers sections horizontally */
+  gap: 2rem;
+  margin: 2rem 0;
+  padding: 1rem;
+  background: linear-gradient(to bottom, #fdfbfb, #ebedee);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+/* Container for the "What are we?" and "Why?" sections */
+.info-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centers sections horizontally */
+  gap: 2rem;
+  margin: 2rem 0;
+  padding: 1rem;
+  background: linear-gradient(to bottom, #fdfbfb, #ebedee);
+  border-radius: 10px;
+}
+
+/* Individual info sections */
+.info-section {
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  align-items: center; /* Center horizontally */
+  justify-content: flex-start; /* Align content at the top */
+  flex: 1;
+  min-width: 280px;
+  max-width: 45%;
+  padding: 1.5rem;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  position: relative;
+}
+
+/* Consistent spacing for headings */
+.info-section h2 {
+  font-size: 1.8rem;
+  color: #0078d7;
+  margin: 1rem 0;
+}
+
+/* Consistent paragraph styles */
+.info-section p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+  margin: 0.5rem 0;
+  text-align: center;
+}
+
+/* Icon container */
+.info-icon {
+  margin-bottom: 1rem; /* Space below the icon */
+  background-color: #0078d7;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.info-icon img {
+  width: 40px;
+  height: 40px;
+}
+
+/* New image styles */
+/* Ensures consistency and alignment for section images */
+/* Image styles for "What Are We" and "Our Purpose" sections */
+.info-image {
+  max-width: 80%; /* Smaller width to ensure the image does not dominate */
+  height: auto; /* Maintain aspect ratio */
+  margin: 1rem 0; /* Add spacing above and below the image */
+  border-radius: 8px; /* Optional: round the image corners */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow for a polished look */
+}
+
+/* Adjust layout for smaller screens */
+@media (max-width: 768px) {
+  .info-section {
+    max-width: 100%;
+  }
+}
+
+/* FAQ Section Styling */
+#faq {
+  padding: 3rem 1rem;       /* Spacing around the section */
+  background-color: transparent; /* Blends into the page background */
+  margin: 0 auto;           /* Centers the FAQ section */
+  max-width: 800px;         /* Limits the width for readability */
+}
+
+#faq h2 {
+  font-size: 2.5rem;
+  color: #0078d7;           /* Matches the site's theme */
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.faq-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faq-item {
+  border-bottom: 1px solid #ddd; /* Divider between questions */
+  padding-bottom: 1rem;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.faq-question h3 {
+  font-size: 1.5rem;
+  color: #0056b3;           /* Matches the theme color */
+}
+
+.faq-question:hover h3 {
+  color: #0078d7;           /* Highlight on hover */
+}
+
+.faq-icon {
+  font-size: 1.5rem;
+  color: #0078d7;           /* Same color as questions */
+  transition: transform 0.3s ease;
+}
+
+.faq-answer {
+  display: none;            /* Hidden by default */
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;              /* Neutral text color */
+  margin-top: 1rem;
+  padding-left: 1.5rem;     /* Indented for clarity */
+}
+
+/* Expanded FAQ Answer */
+.faq-item.active .faq-answer {
+  display: block;           /* Show the answer */
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(45deg); /* Changes '+' to '×' style */
+}
+
+/* Responsive Design for FAQ */
+@media (max-width: 768px) {
+  #faq {
+    padding: 2rem;
+  }
+
+  #faq h2 {
+    font-size: 2rem;
+  }
+
+  .faq-item h3 {
+    font-size: 1.3rem;
+  }
+
+  .faq-item p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Our Partners Section */
+#our-partners {
+  padding: 2rem;
+  text-align: center;
+  background: transparent;
+  border-radius: 10px;
+  margin: 2rem 0;
+}
+
+#our-partners h2 {
+  font-size: 2.5rem;
+  color: #0078d7;
+  margin-bottom: 1.5rem;
+  font-family: 'Poppins', serif;
+}
+
+/* Partners Container */
+.partners-container {
+  display: flex;                /* Enables flexbox layout */
+  justify-content: center;      /* Aligns items horizontally in the center */
+  align-items: center;          /* Aligns items vertically in the center */
+  gap: 2rem;                    /* Space between the logos */
+  flex-wrap: wrap;              /* Ensures logos wrap to the next line on smaller screens */
+  margin: 0 auto;               /* Centers the entire container */
+  max-width: 100%;              /* Ensures logos do not overflow the container */
+  padding: 1rem;                /* Adds space around the logos */
+}
+
+/* Individual Partner Logos */
+.partner-logo {
+  display: block;
+  width: 150px; /* Logo size */
+  height: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.partner-logo img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Hover Effect */
+.partner-logo:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer Styling */
+footer {
+  background-color: #2a7ae2; /* Matches header color */
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 30px;
+}
+
+footer .footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+footer p {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+}
+
+/* Social Media Icons */
+footer .social-icons {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+footer .social-icons a {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+}
+
+footer .social-icons img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+footer .social-icons img:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+/* General Styling */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: linear-gradient(to bottom, #fdfbfb, #ebedee);
+}
+
+h1, h2, h3 {
+  color: #0078d7;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+p {
+  color: #555;
+  text-align: center;
+  line-height: 1.6;
+  margin: 1rem auto;
+}
+
+/* About Us Section */
+#about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Stack content for better mobile layout */
+  text-align: center;
+  padding: 4rem 2rem;
+  background: url('images/hufc_gallery2.JPG') no-repeat center center;
+  background-size: cover;
+  min-height: 600px; /* Ensures a prominent background visual */
+  color: #ffffff; /* White text for contrast */
+}
+
+#about .mission-statement {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  line-height: 1.8;
+  font-style: italic;
+  color: #ffffff; /* White text for contrast */
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Image Box */
+.image-box {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.image-box img {
+  max-width: 90%; /* Slightly smaller image for better layout on mobile */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  #about {
+    padding: 2rem 1rem; /* Adjust padding for smaller screens */
+    min-height: auto; /* Let content dictate the height */
+  }
+
+  .image-box img {
+    max-width: 100%; /* Image scales to full width on mobile */
+    margin-bottom: 1rem; /* Add spacing below the image */
+  }
+
+  #about .mission-statement {
+    font-size: 1.4rem; /* Adjust text size for readability on small screens */
+    line-height: 1.6;
+  }
+}
+
+/* PC Optimization */
+@media (min-width: 1024px) {
+  .image-box img {
+    max-width: 70%; /* Optimize size for larger screens */
+  }
+}
+
+/* Team Section */
+.team-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly; /* Ensures even spacing horizontally */
+  gap: 4rem; /* Increased spacing between team members */
+  padding: 2rem; /* Added padding around the container */
+}
+
+.team-member {
+  text-align: center;
+  max-width: 250px; /* Limits width for better spacing */
+}
+
+.team-member img {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 1rem;
+}
+
+.team-member h4 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  color: #0078d7;
+  margin: 0.5rem 0;
+}
+
+.team-member p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background-color: #f4f4f9;
+}
+
+/* General Reset */
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #fff; /* Ensure the entire background is white */
+}
+
+/* Contact Section */
+#contact {
+  padding: 2rem;
+  text-align: center;
+  background-color: #fff;
+  margin: 0; /* Remove any default margin */
+}
+
+#contact h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  color: #0078d7;
+  margin-bottom: 1.5rem;
+}
+
+/* Contact Container Layout */
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+.contact-info {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+}
+
+.contact-info p {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+  color: #333;
+}
+
+.social-icons {
+  margin-top: 1rem;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin: 0 0.5rem;
+}
+
+.social-icons img {
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.social-icons img:hover {
+  transform: scale(1.2);
+}
+
+/* Event Location Section */
+.event-location {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: left;
+  margin: 0 auto 2rem auto; /* Center and add bottom spacing */
+  max-width: 1200px;
+}
+
+.event-location h3 {
+  color: #0078d7;
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+}
+
+.event-location p {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* Get Involved Section */
+.get-involved {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: left;
+  margin: 0 auto 2rem auto; /* Center and add bottom spacing */
+  max-width: 1200px;
+}
+
+.get-involved h3 {
+  color: #0078d7;
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+}
+
+.get-involved p {
+  font-size: 1.1rem;
+  color: #333;
+  margin: 0.5rem 0;
+}
+
+/* Footer Reset */
+footer {
+  background-color: #0078d7;
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem 0;
+  margin-top: 0;
+}
+
+footer .footer-content {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+footer .social-icons img {
+  width: 24px;
+  height: 24px;
+  margin: 0 0.5rem;
+}

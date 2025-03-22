@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heroes United FC</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="images/hufclogo.png" type="image/png">
+</head>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heroes United FC</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+        <a href="index.html">
+            <img src="images/hufclogo.png" alt="Heroes United FC Logo">
+        </a>
+    </div>
+    <h1>Heroes United FC</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div id="hero">
+  <div class="hero-gallery">
+  </div>
+
+  <div class="hero-content">
+      <h2>Uniting Individuals With Down Syndrome Through Soccer</h2>
+      <p>Creating a supportive and inclusive environment for players to thrive both on and off the field</p>
+      <div class="cta-buttons">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScsmMgs0wuGAONyN-LCoGZsWGTRVyBbdVZKOhXP0g4ILwrVCQ/viewform?usp=send_form" 
+             class="cta-button player-signup" 
+             target="_blank">Player Sign-Up</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfj61E_xiUlyMLzkoyubKRkZxeRo6n53je3gQbUpIeZ09u3Ug/viewform" 
+             class="cta-button volunteer-signup" 
+             target="_blank">Volunteer Sign-Up</a>
+      </div>
+  </div>
+</div>
+
+
+
+<div class="info-container">
+  <div class="info-section" id="what-are-we"> 
+      <div class="info-icon">
+          <img src="images/soccerball.png" alt="What Are We Icon" />
+      </div>
+      <h2>What Are We?</h2>
+      <p>
+          Heroes United FC is a non-profit organization, providing soccer camps that are specifically designed for individuals with Down Syndrome. The sessions last approximately 90 minutes and introduce basic soccer skills that will eventually be developed over the course of a season. Scrimmages will be held at the end of the session, giving the participants a chance to practice their new skills on the field with their friends. Awards will be passed out to recognize players who showed super effort during the session!
+      </p>
+      <p>
+          Volunteers are assigned to each player to help them through the session, with some serving as coaches that will lead the practice. There will be consistent hydration breaks to ensure all players and volunteers are drinking enough water. 
+      </p>
+      <img src="images/hufcwaw.jpg" alt="What Are We Image" class="info-image" />
+  </div>
+
+  <div class="info-section" id="why">
+      <div class="info-icon">
+          <img src="images/heart.png" alt="Why Icon" />
+      </div>
+      <h2>Our Purpose</h2>
+      <p>
+          Heroes United FC will serve as a strong community open to all individuals with Down Syndrome to unite together in their common love for soccer, and help each other grow their passion for the sport. During the program, they will make new friends that will join them along their journey to becoming soccer superstars. Whether it be through practice drills or running games, soccer is a great medium for participants to create new social connections and strengthen their physical health. We look forward to building a huge community of soccer fans dedicated to growing the game for others.
+      </p>
+      <img src="images/hufc-drill.jpg" alt="Our Purpose Image" class="info-image" />
+  </div>
+</div>
+
+
+  <section id="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-container">
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>How can I sign up?</h3>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>You can sign up by clicking the "Player Sign-Up" or "Volunteer Sign-Up" buttons on our homepage. Registration is quick and easy!</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>Where are the sessions held?</h3>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Our sessions are primarily held at the UT Dallas soccer fields. You will receive the exact location details upon registration.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>Do volunteers need any prior soccer experience?</h3>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>No, volunteers do not need any prior soccer experience. Training will be provided to guide them through the process.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>Do players need any prior soccer experience?</h3>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>No, players do not need any prior soccer experience. Our program is designed for beginners and experienced players alike!</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>Is there an age requirement for players?</h3>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>No, there is no age requirement. Players of all ages are welcome to participate.</p>
+        </div>
+      </div>
+    </div>
+</section>
+
+
+  <script>
+    // JavaScript for FAQ toggle functionality
+    document.addEventListener('DOMContentLoaded', () => {
+      const faqItems = document.querySelectorAll('.faq-item');
+
+      faqItems.forEach(item => {
+        item.querySelector('.faq-question').addEventListener('click', () => {
+          // Toggle the active state of the clicked FAQ item
+          item.classList.toggle('active');
+        });
+      });
+    });
+  </script>
+  
+  
+
+<section id="our-partners">
+  <h2>Our Partners</h2>
+  <div class="partners-container">
+    <a href="https://www.downsyndromedallas.org/" target="_blank" class="partner-logo">
+      <img src="images/dsgdallaslogo.png" alt="Partner 1 Logo">
+    </a>
+    <a href="https://www.smallgoalsoccer.com/" target="_blank" class="partner-logo">
+      <img src="images/small-goal-soccer-logo.png" alt="Partner 2 Logo">
+    </a>
+    <a href="https://muhsen.org/" target="_blank" class="partner-logo">
+      <img src="images/muhsen-logo.png" alt="Partner 2 Logo">
+    </a>
+  </div>
+</section>
+
+
+<footer>
+  <div class="footer-content">
+    <p>&copy; 2024 Heroes United FC. All rights reserved.</p>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/heroes_united_fc/?hl=en" target="_blank" aria-label="Instagram">
+        <img src="images/instagram-logo.png" alt="Instagram">
+      </a>
+      <a href="https://www.facebook.com/people/Heroes-United-FC/100085089972023/?mibextid=wwXIfr&rdid=CjBJONPhxGEA6leT&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F15XYjndw6d%2F%3Fmibextid%3DwwXIfr" target="_blank" aria-label="Facebook">
+        <img src="images/facebook-logo.png" alt="Facebook">
+      </a>
+      <a href="https://www.linkedin.com/company/heroes-united-fc" target="_blank" aria-label="LinkedIn">
+        <img src="images/linkedin-logo.png" alt="LinkedIn">
+      </a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
