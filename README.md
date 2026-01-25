@@ -1,4 +1,4 @@
-## ⚽ Heroes United FC Website
+## Heroes United FC Website
 
 The official website for **Heroes United FC**, a nonprofit soccer program that provides inclusive playing opportunities for individuals with Down syndrome and other developmental disabilities.
 
